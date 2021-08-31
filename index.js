@@ -58,9 +58,9 @@ const PORT = process.env.PORT || 3011;
 
 
 
-var counter = async()=>{
-     return counter__ = await servicesFactory.all()
-}
+// var counter = async()=>{
+//      return counter__ = await servicesFactory.all()
+// }
 
 
     
