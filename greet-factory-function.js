@@ -11,23 +11,9 @@ module.exports = function GreetFactory(pool) {
 
 
 
-    async function existingname(name) {
-        await pool.query('Select name where id')
-    }
+   
 
-    async function setname(name) {
-        var greetedname = await pool.query('Select name where id')
-
-        if (greetedname.rows === "") {
-            var name = await pool.query('INSERT INTO users(names, greet_counter) VALUES($1, $2) ', [name_, counter_]);
-
-        }
-        else if (greetedname) {
-
-        }
-
-
-    }
+  
 
  
 
@@ -184,35 +170,35 @@ module.exports = function GreetFactory(pool) {
         }
     }
 
-    async function all() {
-        let users = await pool.query('select * from users');
-        return users.rows;
+    // async function all() {
+    //     let users = await pool.query('select * from users');
+    //     return users.rows;
 
-    }
-    async function insertion() {
-        await pool.query("insert into users (names, greet_counter) values($1, $2 )", ['rick', 8])
+    // }
+    // async function insertion() {
+    //     await pool.query("insert into users (names, greet_counter) values($1, $2 )", ['rick', 8])
 
-    }
+    // }
 
-    async function add(name_, counter_) {
-        let data = await pool.query(`
-        if select * from users where names = $1 and greet_counter = $2
-        begin
-            update users set greet_counter =  $2++ 
-        end
+    // async function add(name_, counter_) {
+    //     let data = await pool.query(`
+    //     if select * from users where names = $1 and greet_counter = $2
+    //     begin
+    //         update users set greet_counter =  $2++ 
+    //     end
         
-        else 
-        begin
-        insert into users (names, greet_counter) values($1, $2)
-        end
-        `, [name_, counter_])
-        return data
-    }
-    async function add2() {
-       name_= 'vuyisa'
-       counter_ = 23
-        await pool.query('insert into users (names+, +greet_counter) values('+name_, counter_+')')
-    }
+    //     else 
+    //     begin
+    //     insert into users (names, greet_counter) values($1, $2)
+    //     end
+    //     `, [name_, counter_])
+    //     return data
+    // }
+    // async function add2() {
+    //    name_= 'vuyisa'
+    //    counter_ = 23
+    //     await pool.query('insert into users (names+, +greet_counter) values('+name_, counter_+')')
+    // }
 
     return {
         setNames,
