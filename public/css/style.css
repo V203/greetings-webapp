@@ -1,0 +1,174 @@
+.greet-header, .greet-div-top{
+    border-style: solid;
+    border-color: slategray;
+    border-width: 4px;    
+    border-radius: 2px 2px 2px 2px;
+    margin: 30px 30px 30px 30px;
+    padding: 2em 2em;
+    display: flex;
+    flex-flow: column;
+}
+.radio-greet-btn{
+    border-style: solid;
+    border-color: slategray;
+    border-width: 4px;       
+    border-radius: 2px 2px 2px 2px;
+    margin: auto auto ;
+    padding: 2em 2em;
+    /* display: flex;
+    flex-flow: row; */
+}
+.error{
+    color: crimson;
+    min-height: 40px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.para{
+    float: left;
+}
+
+
+
+h1,h4{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* text-align: center; */
+    
+
+}
+.counter_label{
+    border-width: 4px;    
+    display: flex;
+    flex-flow: row;
+    
+    /* margin-right: 100; */
+}
+
+.greetCtrl{
+    border-width: 4px;    
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row;
+}
+.enter-name-field{
+    
+    width: 120px;
+    height: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.middle{
+    display: flex;
+    flex-flow: row;
+    margin-left: auto;
+
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    
+    height: auto;
+    width: 60%;
+}
+label, .button{
+    margin-left: auto;
+    margin-right:auto; 
+    display: flex;
+    
+}
+
+.head{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.span-name{
+    display: flex;
+    flex-flow: row;
+    /* padding: 5% 5% 5% 5%; */
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+.output_div{
+    
+    
+    
+    
+    margin-left:auto;
+    margin-right:auto;
+    
+    
+    
+}
+.middle-a{
+    margin-right: auto;
+    margin-left: 10%;
+}
+.middle-c{
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+
+
+
+/* 
+.center-b{
+    display: flex;
+    
+} */
+.shadow{
+    background-color: rgba(199, 165, 53, 0.303);
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 130px;
+    margin-bottom: 10px;
+     padding:5% 5% 5% 5%;
+     box-shadow:5px 10px 5px 10px rgba(43, 28, 43, 0.611) ;
+     border-radius: 9% 9% 9% 9%;
+}
+
+
+@media only screen and (max-width :828px){
+   .greetCtrl, label ,.span-name,  .middle{
+        display: flex;
+        flex-flow: column;
+        margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+        
+    }
+      button{
+        display: flex;
+        flex-flow: column;
+         width: 85px;
+         margin: 3px 3px 3px 3px;
+     
+        }
+        span{
+            display: flex;
+            flex-flow: column;
+        
+
+        }
+        .japanese, .venda, .latin{
+            display: flex;
+            flex-flow: row-reverse;
+            margin-left: auto;
+            margin-right: auto;
+            flex-basis: auto;
+            
+            padding: 0% 0% 0% 0%;
+        }
+     
+}
+
+

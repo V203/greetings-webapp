@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+    {{!--
+    <link rel="stylesheet" href="css/my-grid.css">
+    <link rel="stylesheet" href="css/simple-grid.css">
+    <link rel="stylesheet" href="css/style.css"> --}}
+    <link rel="shortcut icon" href="img/Emoticon-Hello-Waving-Greeting-icon.png" type="image/x-icon">
+
+
+
+</head>
+
+<body>
+
+    <div class="shadow">
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h1 class="head">
+                    Greetings
+                </h1>
+
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="error">
+                    <h6> {{messages.error}}</h6>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+
+
+        <form action="/greet" method="post">
+
+            <div class="row">
+                <div class="col-4"></div>
+
+                <div class="col-4">
+                    <span>
+                        <label for="enter_name">Name
+                            <input class="enter-name-field" type="text" name="enter_name" id=""
+                                placeholder="Enter your name">
+
+                            <div class="counter_label">
+                                <h5>counter:</h5>
+                                <h5 class="counter_div">{{counterDiv}}</h5>
+                            </div>
+
+                        </label>
+                    </span>
+                </div>
+
+                <div class="col-4"></div>
+
+            </div> {{!-- eof 1st row--}}
+
+
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div class="middle">
+                        <label class="japanese" for="rdiojap">Japanese</label>
+                        <input type="radio" name="rdio" id="rdiojap" value="japanese" class="rdio">
+
+                        <label class="venda" for="rdiovenda">Venda</label>
+                        <input type="radio" name="rdio" id="rdiovenda" value="venda" class="rdio">
+
+                        <label class="latin" for="rdiolatin">Latin</label>
+                        <input type="radio" name="rdio" id="rdiolatin" value="latin" class="rdio">
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+
+                    <div class="middle">
+                        <input class="greetBtn" name="greet" type="submit" value="Greet me" formaction="/greet" >
+                        
+                        <input type="submit" name="sub" class="listBtn" value="Show all" formaction="/greeted?">
+                        <input type="submit" name="reset" class="reset" value="Reset me" formaction="/reset">
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+        </form>
+    </div>
+
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="middle">
+            {{out_div}}
+        </div>
+        
+    </div>
+    <div class="col-4"></div>
+
+
+</div>
+    
+    <div class="output_div">
+                            
+                            
+
+                        </div>
+
+    </div>
+
+
+
+    
+
+    
+</div>
+</body>
+<script src="client.js"></script>
+</html>

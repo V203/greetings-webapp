@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+    <link rel="stylesheet" href="css/my-grid.css">
+    <link rel="stylesheet" href="css/simple-grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/Emoticon-Hello-Waving-Greeting-icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="shadow">
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2"><a href="/">
+                    <P>Home</P>
+                    </a></div>
+            <div class="col-5"></div>
+        </div>
+        <h1 class="head">
+            Greeted
+        </h1>
+
+        <hr>
+
+
+
+
+
+        <div class="middle">
+
+            <div class="error_div">
+
+            </div>
+
+
+        </div><!-- //eof middle-->
+
+
+
+
+
+
+
+
+
+
+
+        <div class="middle">
+            <div class="output_div">
+
+                <ul>
+                    {{#each output }}
+                    <a href="/counter/{{this}}">
+                       <span><li><p>{{this}}</p> </li></span> 
+                    </a>
+                    {{/each}}
+                </ul>
+                <div class="center"></div>
+
+            </div>
+        </div><!-- //eof middle-->
+        
+
+    </div><!-- //eof middle-->
+
+
+
+    </div>
+
+
+</body>
+
+
+
+</html>
