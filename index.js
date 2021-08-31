@@ -72,7 +72,9 @@ var counter = async()=>{
     //     return output;
     // }
 app.get("/", async(req, res) => {
-    // var counter = await servicesFactory.all()
+    var counter = async()=>{
+        return counter__ = await servicesFactory.all()
+   }
     res.render("index", {
        counterDiv:await counter(),out_div: greetFactory.action(req.body.rdio, req.body.enter_name)
     })
