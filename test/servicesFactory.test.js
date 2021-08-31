@@ -5,16 +5,11 @@ const pg = require("pg");
 // const servicesFactory = require("../servicesFactory");
 const Pool = pg.Pool;
 
-let useSSL = false;
-let local = process.env.LOCAL || false;
-if (process.env.DATABASE_URL && !local) {
-    useSSL = true;
-}
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://codex-coder:pg123@localhost:5432/db_test';
+const connectionString = process.env.DATABASE_URL || 'postgresql://localhost:5432/db_test';
 
 const pool = new Pool({
-    connectionString,ssl: useSSL
+    connectionString
 });
 
 
