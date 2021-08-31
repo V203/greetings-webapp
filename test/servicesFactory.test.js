@@ -19,7 +19,16 @@ const pool = new Pool({
 
 
 describe('Greetings SQL queries', function () {
-   
+    beforeEach(async function(){
+               // clean the tables before each test run
+               try {
+                   
+               await pool.query("delete  from users;")
+               } catch (error) {
+                   console.error(error)
+               }
+
+    });
 
     
 
