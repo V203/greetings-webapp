@@ -44,10 +44,13 @@ module.exports = function ServicesFactory(pool) {
     
                 someArr.push(Object.values(themGreets_[i]));
                 someArr = someArr.flat();
+                
             }
             return someArr;
         } catch (error) {
             console.error()
+        }finally{
+            
         }
 
       

@@ -3,10 +3,10 @@ module.exports = function GreetFactory(pool) {
     var namesGreeted = {}
 
 
-    var greetMachine = {
-        "greetCounter": getGreetCtr()
+    // var greetMachine = {
+    //     "greetCounter": getGreetCtr()
 
-    }
+    // }
 
 
 
