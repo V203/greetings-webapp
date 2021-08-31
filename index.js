@@ -72,11 +72,11 @@ const PORT = process.env.PORT || 3011;
     //     return output;
     // }
 app.get("/", async(req, res) => {
-    var counter = async()=>{
-        return counter__ = await servicesFactory.all()
-   }
+    
+    await servicesFactory.all()
+   
     res.render("index", {
-       counterDiv:await counter(),out_div: greetFactory.action(req.body.rdio, req.body.enter_name)
+       counterDiv:await servicesFactory.all(),out_div: greetFactory.action(req.body.rdio, req.body.enter_name)
     })
 })
 
@@ -92,7 +92,7 @@ app.post("/greet", async (req, res) => {
     await servicesFactory.addUserOrUpdate(rdio, enter_name)
     res.render("index", {
         out_div: await greetFactory.action(req.body.rdio,enter_name),
-        counterDiv:await counter()
+        counterDiv:await servicesFactory.all()
     })    
    
 })
