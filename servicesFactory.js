@@ -5,16 +5,22 @@ module.exports = function ServicesFactory(pool) {
 
 
 
-
+    
 
 
     async function all() {
+        
         try {
+            
+            
             let all_ = await pool.query('select * from users');
             return all_.rows.length;
         }
+        
         catch (error) {
-            console.error(error)
+            console.log(error.stack)
+        }finally{
+            TypeError.captureStackTrace
         }
 
     }
@@ -48,7 +54,7 @@ module.exports = function ServicesFactory(pool) {
             }
             return someArr;
         } catch (error) {
-            console.error()
+            console.error(Error.captureStackTrace)
         }finally{
             
         }
@@ -76,7 +82,7 @@ module.exports = function ServicesFactory(pool) {
       
         let names = names_.charAt(0).toUpperCase() + names_.slice(1).toLowerCase()
         greet_counter_ = 1
-        
+        try{
             if ((names !== "" && names !== undefined) && (checked !== "" && checked !== undefined)) {
                 await pool.query(`
             with upsert as (update users set greet_counter=greet_counter+1 
@@ -84,7 +90,9 @@ module.exports = function ServicesFactory(pool) {
             select $1,$2 where not exists(select * from upsert);
             `, [names, greet_counter_])
             }
-        
+        }catch(error){
+            console.error(error)
+        }
 
     }
 
