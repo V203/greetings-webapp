@@ -14,9 +14,9 @@ const Pool = pg.Pool;
 
 let useSSL = false;
 let local = process.env.LOCAL || false;
-// if (process.env.DATABASE_URL && !local) {
-//     useSSL = true;
-// }
+if (process.env.DATABASE_URL && !local) {
+    useSSL = false;
+}
 
 
 const connectionString = process.env.DATABASE_URL || 'postgresql://codex-coder:pg123@localhost:5432/db';
