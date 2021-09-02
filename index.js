@@ -113,6 +113,7 @@ app.post("/greeted",async (req, res) => {
     
     res.render("greeted", {
         output:await theFolks()
+        
     })
 })
 

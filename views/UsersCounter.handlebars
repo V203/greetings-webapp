@@ -16,15 +16,9 @@
 
 <body>
     <div class="shadow">
-        <div class="row">
-            <div class="col-5"></div>
-            <div class="col-2"><a href="/">
-                    <P>Home</P>
-                    </a></div>
-            <div class="col-5"></div>
-        </div>
+        
         <h1 class="head">
-            Users Greeted 
+            Users Greeted
         </h1>
 
         <hr>
@@ -47,24 +41,38 @@
 
 
 
-    
-    
-         
+
+
+
 
 
 
         <div class="middle">
             <div class="output_div">
                 <P>
-           
-         {{theValues}} has been greeted {{ourKeys}} times.
-         </P>
+
+                    {{theValues}} has been greeted {{ourKeys}} times.
+                </P>
             </div><!-- //eof middle-->
 
-
+           
+      
         </div><!-- //eof middle-->
+     <div class="row">
+            <div class="col-2">
+                <form>
+                    <input type="button" value="Home Page" onclick="history.go(-2)">
+                </form>
+            </div>
+            <div class="col-8">
 
-
+            </div>
+            <div class="col-2">
+                <form>
+                    <input type="button" value="Previous Page" onclick="history.go(-1)">
+                </form>
+            </div>
+        </div>
 
     </div>
 
