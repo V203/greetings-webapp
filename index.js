@@ -7,6 +7,7 @@ const ServicesFactory = require("./servicesFactory");
 
 const app = express();
 const pg = require("pg");
+const { Routes } = require("./Routes");
 
 const Pool = pg.Pool;
 
@@ -41,45 +42,15 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3011;
+const routes = Routes(servicesFactory);
 
-app.get("/", async (req, res) => {
-    await servicesFactory.all()
-    res.render("index", {
-        counterDiv: await servicesFactory.all()
-    })
-})
+app.get("/", routes.home) 
+app.post("/greet", routes.greet)
+app.post("/reset", routes.reset)
+app.post("/greeted", routes.greeted)
+app.get("/counter/:userGreeted", routes.userGreeted)
+app.post("/action", routes.action )
 
-app.post("/greet", async (req, res) => {
-    req.flash("error",await servicesFactory.testError(req.body.rdio, req.body.enter_name))
-    res.render("index", {
-        out_div: await servicesFactory.addUserOrUpdate(req.body.rdio, req.body.enter_name),
-        counterDiv: await servicesFactory.all()
-    }) 
-})
-
-app.post("/reset", async (req, res) => {
-    await servicesFactory.sqlReset();
-    res.redirect("/");
-}
-)
-
-app.post("/greeted", async (req, res) => {
-    res.render("greeted", {
-        output: await servicesFactory.themNames()
-    })
-})
-
-app.get("/counter/:userGreeted", async (req, res) => {
-    let themUsers = await servicesFactory.getCurrentName(req.params.userGreeted)
-    res.render("UsersCounter", { names: themUsers['names'], greet: themUsers['greet_counter'] });
-
-})
-
-app.post("/action", (req, res) => {
-    res.render("index", { out_div})
-    // res.redirect("/");
-})
 app.listen(PORT, () => {
     console.log("Listening at PORT: " + PORT);
-
 })

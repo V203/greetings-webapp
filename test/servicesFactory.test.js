@@ -14,6 +14,7 @@ describe('Greetings SQL queries', function () {
                } catch (error) {
                    console.error(error)
                }
+               
     });
     it("It should greet ron twice and and the counter should not be greater than one.", async function () {
         let servicesFactory = await ServicesFactory(pool);
